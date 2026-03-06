@@ -4,6 +4,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.project.springcore.common.Coach;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 
 
@@ -12,7 +13,8 @@ public class DemoController {
 
     private Coach myCoach;
 
-    public DemoController(Coach theCoach) {
+    @Autowired
+    public void setCoach(Coach theCoach) {
         myCoach = theCoach;
     }
 
