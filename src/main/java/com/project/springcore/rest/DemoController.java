@@ -4,7 +4,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.project.springcore.common.Coach;
 
-import org.springframework.beans.factory.annotation.Qualifier;
+
 import org.springframework.web.bind.annotation.GetMapping;
 
 
@@ -13,7 +13,7 @@ public class DemoController {
 
     private Coach myCoach;
 
-    public DemoController(@Qualifier("baseballCoach")Coach theCoach) {
+    public DemoController(Coach theCoach) {
         myCoach = theCoach;
     }
 
