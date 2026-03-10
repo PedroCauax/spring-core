@@ -14,15 +14,11 @@ import org.springframework.web.bind.annotation.RequestParam;
 public class DemoController {
 
     private Coach myCoach;
-    private Coach anotherCoach;
 
     public DemoController(
-        @Qualifier("cricketCoach") Coach theCoach, 
-        @Qualifier("cricketCoach") Coach theAnotherCoach){ 
+        @Qualifier("cricketCoach") Coach theCoach){
         System.out.println("in constructor: " + getClass().getSimpleName());
         myCoach = theCoach;
-        anotherCoach = theAnotherCoach;
-        
     }
 
 
@@ -32,9 +28,5 @@ public class DemoController {
         return myCoach.getDailyWorkout();
     }
     
-    @GetMapping("/check")
-    public String check() {
-        return "Comparing myCoach and anotherCoach: " + (myCoach == anotherCoach);
-    }
     
 }
